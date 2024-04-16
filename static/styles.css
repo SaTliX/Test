@@ -4,51 +4,80 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
 #chatbox {
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    max-width: 400px;
     border: 1px solid #ccc;
     margin: 50px auto;
-    padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Pour cacher les éléments dépassant du conteneur */
+    overflow-y: auto; /* Défilement vertical automatique */
+    max-height: 80vh; /* Limite de la hauteur pour activer le défilement */
 }
+
+
 #chatbox h2 {
-    margin-top: 0;
+    margin: 0;
+    padding: 10px 0;
     text-align: center;
+    background-color: #007bff;
+    color: #fff;
 }
-#chatbox form {
-    margin-top: 20px;
-}
-#chatbox input[type="text"] {
-    width: 100%;
+
+#chatlog {
+    max-height: 300px; /* Limiter la hauteur de la zone de conversation pour faire défiler le contenu */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
     padding: 10px;
+}
+
+#chatbox form {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#chatbox input[type="text"] {
+    flex: 1; /* Prendre autant d'espace que possible */
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
+
 #chatbox input[type="submit"] {
-    display: none;
+    display: none; /* Masquer le bouton de soumission */
 }
-#chatbox div {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
+
+.message {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
 }
-#chatbox div:first-child {
-    border-top: none;
-    padding-top: 0;
-}
-#chatbox p {
-    margin: 0;
-    font-size: 16px;
-}
-#chatbox p.user {
+
+.user-message {
+    background-color: #007bff;
+    color: #fff;
     text-align: right;
-    color: #007bff;
 }
-#chatbox p.bot {
-    text-align: left;
+
+.bot-message {
+    background-color: #f2f2f2;
     color: #333;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
+/* Style pour le message du bot */
+#chatlog .bot {
+    color: #333; /* Couleur du texte */
+    padding: 5px 10px; /* Espacement intérieur */
+    margin: 5px 0; /* Marge entre les messages */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
