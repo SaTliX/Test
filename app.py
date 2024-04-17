@@ -13,7 +13,6 @@ def search_restaurants():
     cuisine = request.json['cuisine']  # Nouveau paramètre de recherche
     price = request.json['price']  # Nouveau paramètre de recherche
     open_now = request.json.get('openNow', False)  # Nouveau paramètre de recherche, par défaut False
-  # Ajoutez d'autres paramètres de recherche du formulaire
 
     # Faire une requête à l'API Yelp avec les paramètres de recherche
     api_url = 'https://api.yelp.com/v3/businesses/search'
