@@ -1,14 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #8a8a8a;
 }
 
 #chatbox {
     width: 100%;
-    max-width: 400px;
-    border: 1px solid #ccc;
+    max-width: 600px; /* Augmenter la largeur maximale */
+    border: 1px solid #000000;
     margin: 50px auto;
     background-color: #fff;
     border-radius: 10px;
@@ -18,17 +18,16 @@ body {
     max-height: 80vh; /* Limite de la hauteur pour activer le défilement */
 }
 
-
 #chatbox h2 {
     margin: 0;
     padding: 10px 0;
     text-align: center;
-    background-color: #007bff;
+    background-color: #881b00;
     color: #fff;
 }
 
 #chatlog {
-    max-height: 300px; /* Limiter la hauteur de la zone de conversation pour faire défiler le contenu */
+    max-height: 400px; /* Augmenter la hauteur maximale */
     overflow-y: auto; /* Activer le défilement vertical si nécessaire */
     padding: 10px;
 }
@@ -42,13 +41,9 @@ body {
 #chatbox input[type="text"] {
     flex: 1; /* Prendre autant d'espace que possible */
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     font-size: 16px;
-}
-
-#chatbox input[type="submit"] {
-    display: none; /* Masquer le bouton de soumission */
 }
 
 .message {
@@ -58,20 +53,23 @@ body {
 }
 
 .user-message {
-    background-color: #007bff;
+    background-color: #881b00;
     color: #fff;
     text-align: right;
+    font-weight: bold; /* Texte en gras pour les messages de l'utilisateur */
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .bot-message {
-    background-color: #f2f2f2;
+    background-color: #cfcfcf;
     color: #333;
     text-align: left;
-    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
 /* Style pour le message du bot */
 #chatlog .bot {
     color: #333; /* Couleur du texte */
@@ -81,3 +79,22 @@ body {
     background-color: #f0f0f0; /* Couleur de fond */
 }
 
+/* Arrière-plan pour le chatbox */
+#chatbox {
+    background-image: linear-gradient(to bottom, #cfcfcf, #f2f2f2); /* Dégradé de blanc à gris clair */
+}
+
+#submitbtn {
+    padding: 8px 20px; /* Espacement interne */
+    margin-left: 10px; /* Marge à gauche pour l'espacement */
+    background-color: #881b00; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type pointer au survol */
+    transition: background-color 0.3s ease; /* Animation de transition sur la couleur de fond */
+}
+
+#submitbtn:hover {
+    background-color: #0056b3; /* Nouvelle couleur de fond au survol */
+}
